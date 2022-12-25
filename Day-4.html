@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass the message</title>
+</head>
+<body>
+    <form id="message-form">
+        <input type="text" name="message" id="message">
+        <input type="submit" name="submit" id="submit-btn">
+        <p style="color: red; display: none;" id="errorMsg">please enter a message!</p>
+        <h6>last message delivered</h6>
+        <h4 id="msgContent">Hello World!</h4>
+    </form>
+    <script>
+        const form = document.getElementById("message-form");
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            const message = document.getElementById('message');
+            const errorMsg = document.getElementById('errorMsg');
+            const msgContent = document.getElementById('msgContent');
+
+            if(message.value == "")
+            {
+                errorMsg.style.display = "block";
+                setTimeout(function(){
+                    errorMsg.style.display = "none";
+                }, 3000)
+            }
+            else
+            {
+                msgContent.innerHTML = message.value;
+                message.value = '';
+            }
+        })
+    </script>
+</body>
+</html>
