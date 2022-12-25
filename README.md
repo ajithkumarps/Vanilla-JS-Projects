@@ -2,3 +2,4 @@
 
    1. The focus is fully on javascript only.
    2. HTML and CSS not the primary focus.
+   3. Scripts are written only inside HTML.
